@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>JSON</title>
+        <link rel="stylesheet" href=" json_multiple_profiles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body >
+        <script>
+
+            var data_json ='{ "data": ['+
+            ' {"name" : "Anu", "nickName" : "Anu", "motto": "Work Like Hell", "job": "Volunteer at Nest Education High School"}, '+
+            ' {"name" : "Nambarjin", "nickName" : "Lambo", "motto": "No life is worth living if we cannot be true to our nature.", "job": "Volunteer at Nest Education High School" }, '+
+            ' {"name" : "Bayalagmaa", "nickName" : "Sofia", "motto": "???", "job": "Volunteer at Nest Education High School"}, '+
+            ' {"name" : "Tugsbayasgalan", "nickName" : "Tugsuu", "motto": "Do not be afraid of CHANGE be afraid of remaining the same", "job": "Volunteer at Nest Education High School"} ]}' ; 
+
+            var urldata = [
+                {"url":"https://scontent.fuln1-2.fna.fbcdn.net/v/t1.0-9/65717621_2325173114410225_593087794771918848_n.jpg?_nc_cat=107&_nc_oc=AQnWErTvtIjB9Mtv71HW4zck7pWLPSJemR1XP-nCMrMlxj0NUXmWZ1UumoiNeM9SSRc&_nc_ht=scontent.fuln1-2.fna&oh=38bdc8a2256080c4b56bf0760504ad41&oe=5E06A5A2",
+                 "num":"0"},
+                {"url":"https://scontent.fuln1-2.fna.fbcdn.net/v/t1.0-9/53548214_865056780495939_4029492025949683712_n.jpg?_nc_cat=108&_nc_oc=AQk-FCNOCbpN89rdWe1ua-eAchZmoYONSyIs_IgXRUIO1wF_gj-oNN8fx1nrY3oTfG4&_nc_ht=scontent.fuln1-2.fna&oh=49debda54a80f41c47aba9f219469144&oe=5E03E932", 
+                "num": "1" },
+                {"url":"https://scontent.fuln1-2.fna.fbcdn.net/v/t1.0-9/49947910_2191549247751550_7847095821785890816_n.jpg?_nc_cat=108&_nc_oc=AQk89omVUEdmUPCW1VUTz9Mt1FqrX2vvEnE3kouJN8Sf9NwWk2az81HkEfJhvilkf54&_nc_ht=scontent.fuln1-2.fna&oh=dcc59f96644951b713633b752ae76062&oe=5DFB9E3E",
+                "num": "2" },
+                {"url":"https://scontent.fuln1-2.fna.fbcdn.net/v/t1.0-9/47321014_1126362507530796_7478441220943904768_n.jpg?_nc_cat=106&_nc_oc=AQll9u2pAtGvkCyyfmWIJHTHpURV2LGK7uqMdPojbXXBUqTbd1xUPXd9cFjH0Esepis&_nc_ht=scontent.fuln1-2.fna&oh=e20f39ef868e9cbdb4b25404600a448d&oe=5DF1843D",
+                "num": "3" }
+            ];
+
+            function change(x){
+                obj = JSON.parse(data_json);
+                
+                document.getElementById("Name").innerHTML =  
+                obj.data[x].name + "\'s  Profile" + "<br>";
+                
+                document.getElementById("nick").innerHTML = 
+                "Nickname : " + obj.data[x].nickName + "<br>";
+                
+                document.getElementById("Motto").innerHTML =
+                "Life Motto: " + obj.data[x].motto + "<br>";
+
+                document.getElementById("Job").innerHTML =
+                "Proffesion: " + obj.data[x].job + "<br>";
+                
+                $(document).ready(function(){
+                    $.each(urldata, function (index, value) {  
+                        if(value.num == x){
+                            $("#pic").html("<img src='"+value.url+"' class = 'frame' />");
+                        }  
+                    });
+                });
+
+            }
+        </script>
+         <div id = "center">
+            <input type = "button" value = "Anu" onclick = "change(0)" />
+            <input type = "button" value = "Lambo" onclick = "change(1)" />
+            <input type = "button" value = "Bayalagmaa" onclick = "change(2)" />
+            <input type = "button" value = "Tugsuu" onclick = "change(3)" />
+        </div>
+        <br><br>
+        <div id = "personal_info" class = "clearfix">
+            <div id = "pic"></div>
+            <h2 id = "Name"></h2>
+            <p id = "nick" ></p>
+            <p id = "Motto"></p>
+            <p id = "Job"></p>
+        </div>
+        
+    </body>
+</html>

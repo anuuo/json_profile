@@ -1,0 +1,71 @@
+#personal_info{
+    font-size: 2.3vw;
+    text-shadow: 2px 2px rgba(245, 246, 252, 0.52);
+    color: black;
+    text-align: left;
+    background-color:transparent;
+    width: 100%;
+    height: 100%;
+
+}
+#name{
+    text-align: center;
+    text-shadow: 2px 2px rgba(245, 246, 252, 0.52);
+    color: black;
+    background-color: transparent;
+    font-size: 5vw;
+}
+#center{
+    text-align: center;
+}
+input{
+    color: rgb(195, 171, 218);
+    background-image: url('http://4.bp.blogspot.com/-VLLxoOK7j3c/VNLozitDOmI/AAAAAAAAASE/b_h0J1C2tMk/s1600/Galaxy%2BViolet%2BWallpaper%2B5.jpg');
+    height: 6%;
+    width: 15%;
+    text-align: center;
+    font-size: 1.5vw;
+    border-radius: 20px;
+}
+body{
+    background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+    url('http://4.bp.blogspot.com/-VLLxoOK7j3c/VNLozitDOmI/AAAAAAAAASE/b_h0J1C2tMk/s1600/Galaxy%2BViolet%2BWallpaper%2B5.jpg');
+    background-size: 100%;
+    background-repeat: cover;
+}
+
+img{
+    border-radius : 50%;
+    width: 25%;
+    float: left;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 2%;
+}
+div{
+    background-color: transparent;
+}
+/* .block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: rgb(3, 3, 11);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    color:  rgb(195, 171, 218);
+    font-size: 4vw;
+  } */
+.clearfix{
+    overflow: auto;
+}
+.frame{
+	padding: 10px 10px;
+  	border: 3px transparent;
+  	border-radius: 50%;
+  	background-image: linear-gradient(blue, black), radial-gradient(circle at top left, violet, yellow);
+  	background-origin: border-box;
+  	background-clip: content-box, border-box;
+}
